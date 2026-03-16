@@ -17,7 +17,7 @@ while True:
     if face is not None:
         face = cv.resize(face,(224,224))/255.0
 
-        preds = model.predict(face)
+        preds = model.predict(face[None,None,...])
 
         label = "Fake"  if preds>=0.55 else 'Real'
 
